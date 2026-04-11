@@ -181,9 +181,6 @@ pre { overflow-x: auto; }
 a:hover, a:focus {
 	font-style: italic;
 }
-a:visited {
-	color: var(--accent);
-}
 .cover {
   border-radius: 10px;
   display: flex;
