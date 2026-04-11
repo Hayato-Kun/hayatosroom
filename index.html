@@ -75,28 +75,49 @@
 		<section class="half">
 			<h2>Spotify</h2>
 			<div id="spotify"></div>
+			<div id="player">
+  <div id="status">[ Tocando ]</div>
 
+  <img id="cover" />
+
+  <div id="title">loading...</div>
+  <div id="artist">...</div>
+
+  <div id="bar">
+    <div id="progress"></div>
+  </div>
+</div>
 <script>
-async function getNowPlaying() {
-  const res = await fetch("https://spotify-now-playing-beta-sepia.vercel.app/api/now-playing");
-  const data = await res.json();
+async function loadSpotify() {
+  try {
+    const res = await fetch("https://spotify-now-playing-beta-sepia.vercel.app/api/now-playing");
+    const data = await res.json();
 
-  const el = document.getElementById("spotify");
+    if (!data.playing) {
+      document.getElementById("status").innerText = "[ offline ]";
+      document.getElementById("title").innerText = "nada tocando";
+      document.getElementById("artist").innerText = "";
+      return;
+    }
 
-  if (!data.playing) {
-    el.innerHTML = "Nada tocando 😴";
-    return;
+    document.getElementById("status").innerText = "[ now playing ]";
+    document.getElementById("title").innerText = data.title;
+    document.getElementById("artist").innerText = data.artist;
+    document.getElementById("cover").src = data.albumImage || "";
+
+    let w = 0;
+    setInterval(() => {
+      w = (w + 2) % 100;
+      document.getElementById("progress").style.width = w + "%";
+    }, 300);
+
+  } catch (e) {
+    document.getElementById("status").innerText = "[ error ]";
   }
-
-  el.innerHTML = `
-  <img src="${data.albumImage}">
-  <p><strong>${data.title}</strong></p>
-  <p>${data.artist}</p>
-`;
 }
 
-getNowPlaying();
-setInterval(getNowPlaying, 10000);
+loadSpotify();
+setInterval(loadSpotify, 10000);
 </script>
 		</section>
 		
