@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hayato's Room</title>
+	<link href="cyanobacteria.css" rel="stylesheet" type="text/css" media="all">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<div class="container">
+
+		<header>
+			<span>Hayato's Room</span>
+		</header>
+		
+		<div class="small">
+			<nav>
+				<div>navigation</div>
+				<a href="">link</a>
+				<a href="">youtube</a>
+				<a href="">twitch</a>
+				<a href="">twitter</a>
+				<a href="">spotify</a>
+				<a href="https://steamcommunity.com/id/hayatoisr/">steam</a>
+				<a href="nada">discord</a>
+			</nav>
+			<!-- optional spot for styled button outside the navigation box -->
+			<img src="">
+		</div>
+		
+		<section class="half">
+		
+			<h1>welcome to my homepage!</h1>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+			<h4>Heading 4</h4>
+			<p>
+				<strong>This is strong,</strong>
+				this is normal, and
+				<em>this is emphasized!</em>
+				<a href="#">This is a link.</a>
+				<sup>This is superscript;</sup>
+				<sub>this is subscript.</sub>
+				<code>This is code.</code>
+				<s>This is strikethrough.</s>
+			</p>
+			<ul>
+				<li>Unordered list item 1</li>
+				<li>Unordered list item 2
+					<ul>
+						<li>Nested list</li>
+					</ul>
+				</li>
+				<li>Unordered list item 3</li>
+			</ul>
+			<ol>
+				<li>Unordered list item 1</li>
+				<li>Unordered list item 2
+					<ul>
+						<li>Nested list</li>
+					</ul>
+				</li>
+				<li>Unordered list item 3</li>
+			</ol>
+		</section>
+				
+		<section class="small">
+			<h2>another section</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis orci at sodales convallis. Proin luctus vehicula dolor, id ultrices diam eleifend eu. Donec tincidunt tellus tellus, in maximus lorem fermentum ac. Phasellus sagittis nisi in ante pretium, eget molestie est pellentesque. Ut tincidunt ultricies porta.</p>
+		</section>
+		
+		<section class="full">
+			<h2>full width section</h2>
+		</section>
+		
+		<section class="half">
+			<h2>Spotify</h2>
+			<div id="lastfm">
+  🎧 <span id="lfm-title">Carregando...</span> - 
+  <span id="lfm-artist"></span>
+  <h2>🎧 Now Playing</h2>
+
+<!-- LAST.FM / NOW PLAYING (via imagem - não quebra CSP) -->
+<img 
+  src="https://lastfm.freetls.fastly.net/i/u/300x300"
+  alt="Now Playing"
+/>
+
+<p id="music">Carregando música...</p>
+
+</div>
+
+<script>
+const API_KEY = "0f24fe94300dc184c7f22c04a26e6f70";
+const USER = "	Hayato_kun1";
+
+async function loadLastFM() {
+  const res = await fetch(
+    `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&format=json`
+  );
+
+  const data = await res.json();
+
+  const track = data.recenttracks.track[0];
+
+  const title = track.name;
+  const artist = track.artist["#text"];
+
+  document.getElementById("lfm-title").textContent = title;
+  document.getElementById("lfm-artist").textContent = artist;
+}
+
+loadLastFM();
+setInterval(loadLastFM, 10000);
+</script>
+		</section>
+		
+		<section class="half">
+			<h2>half width section</h2>
+		</section>
+		
+	</div>
+
+	<footer>
+		<span>cyanobacteria.css by <a href="https://ribo.zone/free/layouts/">ribo.zone</a></span>
+	</footer>
+
+</body>
+</html>
 
