@@ -184,7 +184,7 @@ a:hover, a:focus {
 a:visited {
 	color: var(--accent);
 }
-.container {
+.1container {
   position: relative;
   width: 300px;
 }
