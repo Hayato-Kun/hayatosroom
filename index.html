@@ -76,43 +76,29 @@
 		
 		<section class="half">
 			<h2>Spotify</h2>
-			<div id="lastfm">
-  🎧 <span id="lfm-title">Carregando...</span> - 
-  <span id="lfm-artist"></span>
-  <h2>🎧 Now Playing</h2>
-
-<!-- LAST.FM / NOW PLAYING (via imagem - não quebra CSP) -->
-<img 
-  src="https://lastfm.freetls.fastly.net/i/u/300x300"
-  alt="Now Playing"
-/>
-
-<p id="music">Carregando música...</p>
-
-</div>
+			<div id="spotify"></div>
 
 <script>
-const API_KEY = "0f24fe94300dc184c7f22c04a26e6f70";
-const USER = "	Hayato_kun1";
-
-async function loadLastFM() {
-  const res = await fetch(
-    `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&format=json`
-  );
-
+async function getNowPlaying() {
+  const res = await fetch("https://SEU-BACKEND.vercel.app/now-playing");
   const data = await res.json();
 
-  const track = data.recenttracks.track[0];
+  const el = document.getElementById("spotify");
 
-  const title = track.name;
-  const artist = track.artist["#text"];
+  if (!data.playing) {
+    el.innerHTML = "Nada tocando 😴";
+    return;
+  }
 
-  document.getElementById("lfm-title").textContent = title;
-  document.getElementById("lfm-artist").textContent = artist;
+  el.innerHTML = `
+    <img src="${data.albumImage}" width="100">
+    <p><strong>${data.title}</strong></p>
+    <p>${data.artist}</p>
+  `;
 }
 
-loadLastFM();
-setInterval(loadLastFM, 10000);
+getNowPlaying();
+setInterval(getNowPlaying, 10000);
 </script>
 		</section>
 		
