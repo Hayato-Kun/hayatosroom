@@ -234,7 +234,3 @@ a:visited {
 }
 
 /* fundo opcional pra vibe aero */
-body {
-  background: linear-gradient(180deg, #3ec6ff, #0b2a4a);
-  min-height: 100vh;
-}
