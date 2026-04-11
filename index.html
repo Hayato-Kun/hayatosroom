@@ -92,13 +92,10 @@ async function loadSpotify() {
     const data = await res.json();
 
     if (!data.playing) {
-      document.getElementById("status").innerText = "[ offline ]";
       document.getElementById("title").innerText = "nada tocando";
       document.getElementById("artist").innerText = "";
       return;
     }
-
-    document.getElementById("status").innerText = "[ now playing ]";
     document.getElementById("title").innerText = data.title;
     document.getElementById("artist").innerText = data.artist;
     document.getElementById("cover").src = data.albumImage || "";
