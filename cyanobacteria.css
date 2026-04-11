@@ -184,3 +184,10 @@ a:hover, a:focus {
 a:visited {
 	color: var(--accent);
 }
+#title {
+  text-align: center;
+}
+
+#artist {
+  text-align: center;
+}
