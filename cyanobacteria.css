@@ -2,8 +2,8 @@
 	:root {
 		--text: darkslategrey;
 		--border: lightgrey;
-		--accent: teal;
-		--bg: #dce3e1;
+		--accent: #4f17a3;
+		--bg: #4f17a3;
 		--gradientTop: white;
 		--gradientBottom: rgb(240, 248, 255, .8);
 	}
@@ -19,9 +19,9 @@
 			--text: white;
 			--border: #5a7678;
 			--accent: #74C365;
-			--bg: rgb(0,60,60,.8);
-			--gradientBottom: rgb(0, 50, 60);
-			--gradientTop: darkslategrey;
+			--bg:#7569c8;
+			--gradientBottom: #5347a6;
+			--gradientTop: 	#978bea;
 			a:link { color: lightblue; }
 		}
 		header {
