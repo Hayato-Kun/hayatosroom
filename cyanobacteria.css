@@ -184,3 +184,29 @@ a:hover, a:focus {
 a:visited {
 	color: var(--accent);
 }
+.cover {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.vinyl {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translateY(-50%);
+  width: 220px;
+  height: 220px;
+  z-index: 1;
+}
+
+#title {
+  font-size: 50px;
+}
+
+#artist {
+  font-size: 30px;
+  opacity: 0.8;
+}
