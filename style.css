@@ -8,7 +8,7 @@
 		--gradientBottom: rgb(240, 248, 255, .8);
 	}
 	header {
-		background: url('bg,jpg');
+		background: url('https://raw.githubusercontent.com/Hayato-Kun/hayatosroom/4383e8cb1ac9a19d415b6d63c7f30b3d40450cfb/bg.jpg');
 	}
 /* end light mode styling */
 
@@ -25,7 +25,7 @@
 			a:link { color: lightblue; }
 		}
 		header {
-			background: url('bg,jpg');
+			background: url('https://raw.githubusercontent.com/Hayato-Kun/hayatosroom/4383e8cb1ac9a19d415b6d63c7f30b3d40450cfb/bg.jpg');
 		}
 	}
 /* end dark mode styling */
