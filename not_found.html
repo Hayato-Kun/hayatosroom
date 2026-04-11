@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>404</title>
+  <meta charset="utf-8" />
+
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      border: 1px solid #fff;
+      padding: 30px;
+      max-width: 400px;
+
+      /* leve glow azul (aero sutil) */
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.4);
+    }
+
+    h1 {
+      font-size: 60px;
+      margin: 0;
+    }
+
+    p {
+      margin: 10px 0;
+      opacity: 0.8;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 16px;
+
+      color: #fff;
+      text-decoration: none;
+
+      border: 1px solid #fff;
+      transition: 0.2s;
+    }
+
+    a:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* glitch leve */
+    h1::after {
+      content: "404";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(0, 200, 255, 0.4);
+      filter: blur(4px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <p>pagina não encontrada</p>
+    <p>você se perdeu no site 👁️</p>
+
+    <a href="/">voltar</a>
+  </div>
+</body>
+</html>
