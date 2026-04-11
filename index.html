@@ -91,10 +91,10 @@ async function getNowPlaying() {
   }
 
   el.innerHTML = `
-    <img src="${data.albumImage}" width="100">
-    <p><strong>${data.title}</strong></p>
-    <p>${data.artist}</p>
-  `;
+  <img src="${data.albumImage}">
+  <p><strong>${data.title}</strong></p>
+  <p>${data.artist}</p>
+`;
 }
 
 getNowPlaying();
