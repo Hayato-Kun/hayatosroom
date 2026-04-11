@@ -80,7 +80,7 @@
 
 <script>
 async function getNowPlaying() {
-  const res = await fetch("https://SEU-LINK-AQUI/api/now-playing");
+  const res = await fetch("https://spotify-now-playing-beta-sepia.vercel.app/api/now-playing");
   const data = await res.json();
 
   const el = document.getElementById("spotify");
