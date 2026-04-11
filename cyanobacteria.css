@@ -184,10 +184,35 @@ a:hover, a:focus {
 a:visited {
 	color: var(--accent);
 }
-#title {
-  text-align: center;
+.cover {
+  border-radius: 10px;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+width: 250px;
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  transform: translateX(20%);
 }
 
+.vinyl {
+  position: absolute;
+  transform: translateX(60%);
+  width: 250px;
+  height: 250px;
+  z-index: 1;
+  
+}
+#title {
+	font-size 16px;
+	text-align: center;
+}
+
+
 #artist {
-  text-align: center;
+  font-size 12px;
+text-align: center;
+  opacity: 0.8;
 }
